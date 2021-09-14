@@ -1,0 +1,4 @@
+#can_not_login{
+  transition: all 0.5s;
+  opacity: 0;
+}

@@ -1,0 +1,43 @@
+#header_logo{
+  width: 50px;
+  cursor: pointer;
+}
+#sign-up{
+  margin-left: 20px;
+}
+#user-img{
+  width: 35px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+#user-dropdown{
+  position: relative;
+  top: -15px;
+}
+
+#logout{
+  text-decoration: none;
+  color: #4f5d73;
+}
+
+#user-dropdown::marker{
+  color: #636c83;
+}
+#logout_dropdown{
+  height: 34px;
+  margin-top: -8px;
+  padding-top: 5px;
+}
+#logout_dropdown:active{
+  color: white;
+  background-color: #321fdb !important;
+}
+
+#logout_dropdown:hover{
+  background-color: #eaecee;
+  text-decoration: none;
+}
+
+#logout_icon{
+  margin-left: 21px;
+}

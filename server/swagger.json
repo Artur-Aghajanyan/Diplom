@@ -1,0 +1,468 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Quizzes creating APIs",
+    "description": "This is app for creating Quizzes",
+    "license": {
+      "name": "MIT",
+      "url": "https://itc.vsu.am"
+    }
+  },
+  "host": "localhost:7000",
+  "tags": [
+    {
+      "name": "Quizzes",
+      "description": "API for Quizzes in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/quizzes": {
+      "get": {
+        "tags": [
+          "Quizzes"
+        ],
+        "summary": "Get All Quizzes",
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/Quizzes"
+          }
+        }
+      }
+    },
+    "/api/quiz": {
+      "post": {
+        "tags": [
+          "Quizzes"
+        ],
+        "summary": "Create Quiz",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Quiz"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/quiz/": {
+      "put": {
+        "tags": [
+          "Quizzes"
+        ],
+        "summary": "Update Quiz",
+        "parameters": [
+          {
+            "description": "The quiz ID",
+            "name": "id",
+            "in": "body",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "$ref": "#/definitions/QuizId"
+            }
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuizName"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/quiz/destroy/": {
+      "delete": {
+        "tags": [
+          "Quizzes"
+        ],
+        "summary": "Delete Quiz",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Quiz"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/questions/": {
+      "get": {
+        "tags": [
+          "Questions"
+        ],
+        "summary": "Get All Questions",
+        "parameters": [
+          {
+            "description": "The quiz ID",
+            "name": "quizId",
+            "in": "header",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "$ref": "#/definitions/Quiz"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/Question"
+          }
+        }
+      }
+    },
+    "/api/question/": {
+      "post": {
+        "tags": [
+          "Questions"
+        ],
+        "summary": "Create Question",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionName"
+            }
+          },
+          {
+            "name": "typeAnswer",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionTypeAnswer"
+            }
+          },
+          {
+            "name": "quizId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionQuizId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Questions"
+        ],
+        "summary": "Update Question",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionName"
+            }
+          },
+          {
+            "name": "typeAnswer",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionTypeAnswer"
+            }
+          },
+          {
+            "name": "questionId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionQuestionId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/question/destroy/": {
+      "delete": {
+        "tags": [
+          "Questions"
+        ],
+        "summary": "Delete Question",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/answers": {
+      "get": {
+        "tags": [
+          "Answers"
+        ],
+        "summary": "Get All Answers",
+        "parameters": [
+          {
+            "name": "question_id",
+            "in": "header",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/definitions/Answers"
+          }
+        }
+      }
+    },
+    "/api/answer": {
+      "post": {
+        "tags": [
+          "Answers"
+        ],
+        "summary": "Create Answer",
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          },
+          {
+            "name": "trueAnswer",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/AnswerTrueAnswer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/answer/": {
+      "put": {
+        "tags": [
+          "Answers"
+        ],
+        "summary": "Update Answer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/AnswerId"
+            }
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Answer"
+            }
+          },
+          {
+            "name": "trueAnswer",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/AnswerTrueAnswer"
+            }
+          },
+          {
+            "name": "questionId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    },
+    "/api/answer/destroy/": {
+      "delete": {
+        "tags": [
+          "Answers"
+        ],
+        "summary": "Delete Answer",
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/QuestionId"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "QuizId": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        }
+      }
+    },
+    "QuizName": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionName": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionQuizId": {
+      "required": [
+        "quizId"
+      ],
+      "properties": {
+        "quizId": {
+          "type": "integer"
+        }
+      }
+    },
+    "QuestionTypeAnswer": {
+      "required": [
+        "typeAnswer"
+      ],
+      "properties": {
+        "typeAnswer": {
+          "type": "string"
+        }
+      }
+    },
+    "QuestionId": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        }
+      }
+    },
+    "QuestionQuestionId": {
+      "required": [
+        "questionId"
+      ],
+      "properties": {
+        "questionId": {
+          "type": "string"
+        }
+      }
+    },
+    "Answer": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "AnswerId": {
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        }
+      }
+    },
+    "AnswerTrueAnswer": {
+      "required": [
+        "trueAnswer"
+      ],
+      "properties": {
+        "trueAnswer": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
