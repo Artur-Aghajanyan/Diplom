@@ -1,31 +1,13 @@
 import React from 'react'
 import Header from "../../users/Header";
 import {
-  CBadge,
   CCard,
   CCardBody,
   CCardHeader,
   CCol,
-  CDataTable,
   CRow
 } from '@coreui/react'
-import DocsLink from "../../../reusable/DocsLink";
 import {Link} from "react-router-dom";
-
-const getBadge = status => {
-  switch (status) {
-    case 'Active':
-      return 'success'
-    case 'Inactive':
-      return 'secondary'
-    case 'Pending':
-      return 'warning'
-    case 'Banned':
-      return 'danger'
-    default:
-      return 'primary'
-  }
-}
 
 const Home = (props) => {
   return (

@@ -27,8 +27,6 @@ module.exports = (sequelize, DataTypes) => {
         // associations can be defined here
     };
 
-    User.create({name:'admin', surname:'admin', password:'admin', role:'admin', email:'admin@admin', id:1})
-    // console.log(User.id)
-    // console.log("aaaaaaaaaaaaaaaaaaaa")
+    User.create({name:'admin', surname:'admin', password:'adminadmin', role:'admin', email:'admin@admin.com', id:1})
     return User;
 };

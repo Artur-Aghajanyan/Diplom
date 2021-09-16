@@ -1,0 +1,117 @@
+.question-container{
+    background: #c8c7c7;
+    font-family: 'Gafata', sans-serif !important;
+}
+.quiz-container .content{
+    height: 0;
+    margin-top: 60px;
+}
+.question-container > header{
+    text-align: center;
+    padding: 17px;
+    color: #fff;
+    background: #303755;
+    border-bottom: 1px solid red;
+}
+
+.question-container > header > span{
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.add-question{
+    text-align: center;
+    background: #373f65;
+    border-bottom: 1px solid red;
+}
+
+.add-question button{
+    cursor: pointer;
+    margin: 15px 15px 25px;
+    width: 80%;
+    padding: 10px;
+    color: white;
+    background-color: #5000de;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    transition: background 0.5s;
+    border: 2px solid transparent;
+
+}
+
+.question-container .add-question>button:hover{
+    background: #370391;
+}
+
+.question-container .add-question>button:active{
+    border: 2px solid #5b00ff;
+}
+
+.body{
+    height: auto;
+}
+
+.body .table{
+    margin: auto;
+    margin-top: 45px;
+    width: 90%;
+    border-collapse: collapse;
+    border-spacing: 0 15px;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.body .table .thead-dark > tr{
+    background: #636c83;
+    color: white ;
+    border-spacing: 0;
+    border: 1px solid #636c83 ;
+}
+
+.body .table tr{
+    height: 60px;
+    color: #4f5974;
+    border-bottom: 1px solid #d6d6d6;
+}
+.body .table .thead-dark tr th{
+    border: 1px solid #636c83 ;
+    border-spacing: 0;
+}
+
+.questions-title .question-name{
+    text-align: left;
+}
+
+.question-buttons{
+    text-align: right;
+}
+
+.question-buttons button{
+    width: 30px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 25px;
+    border-right: 5px;
+    transition: all 0.5s;
+    border: 0;
+    border-radius: 2.5px;
+}
+
+.there-is-not-question{
+    color: black;
+}
+.there-is-not-icon{
+    color: yellow;
+}
+
+@media only screen and (max-width: 800px) {
+    .add-question button{
+        width: 50%;
+        font-size: 13px;
+    }
+    #add-quiz-input input{
+        margin: auto;
+        display: block;
+    }
+}

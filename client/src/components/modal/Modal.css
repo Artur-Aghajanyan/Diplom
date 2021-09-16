@@ -1,0 +1,123 @@
+.modal-wrapper {
+    background: white;
+    border: 1px solid #d0cccc;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    position: fixed;
+    align-items: center;
+    left: 30%;
+    top: 10%;
+    height: 200px;
+    transition: all .8s;
+    width: 40%;
+    display: grid;
+    grid-template-rows: 20% 30% 40%;
+    border-radius: 5px;
+}
+
+.modal-header {
+    border-bottom: 1px solid #cecbcb;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 20px;
+    text-align: right;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.modal-header h2 {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+    position: relative;
+    top: 12px;
+
+    color: #8c8a8a;
+}
+
+.modal-footer {
+    height: 40px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.modal-footer button{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    cursor: pointer;
+    position: relative;
+    background: white;
+    border-radius: 5px;
+    padding: 9px;
+    top: -15px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+.modal-footer .delete-yes{
+    border: 1px solid red;
+    color: red;
+}
+
+.modal-footer .delete-no{
+    border: 1px solid blue;
+    color: blue;
+}
+
+.modal-footer .delete-yes:hover{
+    background: red;
+    color: white;
+}
+
+.modal-footer .delete-no:hover{
+    background: blue;
+    color: white;
+}
+
+.close-modal-btn {
+    color: #a6a6a6;
+    cursor: pointer;
+    float: right;
+    font-size: 30px;
+    margin: 0;
+    transition: all 0.5s;
+}
+
+.close-modal-btn:hover {
+    color: black;
+}
+
+.btn-cancel {
+    background-color: #b71c1c;
+    float: left;
+}
+
+.btn-continue {
+    background-color: #1b5e20;
+    float: right;
+}
+
+.back-shed {
+    background-color: rgba(48, 49, 48, 0.42);
+    height: 100%;
+    position: fixed;
+    transition: all 1.3s;
+    width: 100%;
+}
+
+.open-modal-btn {
+    margin: 15px;
+    padding: 10px;
+}
+
+.opacity{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all .8s;
+}

@@ -1,6 +1,5 @@
 #header_logo{
   width: 50px;
-  cursor: pointer;
 }
 #sign-up{
   margin-left: 20px;
@@ -40,4 +39,10 @@
 
 #logout_icon{
   margin-left: 21px;
+}
+
+.navbar_link {
+  color: white !important;
+  font-size: 18px !important;
+  margin-left: 15px;
 }

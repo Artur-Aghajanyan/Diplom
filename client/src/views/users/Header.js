@@ -15,7 +15,7 @@ import {
   Switch,
   Route, useHistory
 } from "react-router-dom";
-import {Navbar, Nav, NavDropdown, Form, Button, Image} from 'react-bootstrap'
+import {Navbar, Nav, Form, Button, Image} from 'react-bootstrap'
 
 const Header = (props) => {
   const history = useHistory();
@@ -26,23 +26,14 @@ const Header = (props) => {
           <div className="col-md-12">
             <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
               <Navbar.Brand>
-                <Link to={`/`}>
-                  <Image src={Logo} alt="" id='header_logo'/>
-                </Link>
+                <Image src={Logo} alt="" id='header_logo'/>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav"/>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/about-us">Contact Us</Nav.Link>
-                  <Nav.Link href="/contact-us">About Us</Nav.Link>
-                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider/>
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                  </NavDropdown>
+                  <Link className='navbar_link' to="/">Home</Link>
+                  <Link className='navbar_link' to="/tests">Tests</Link>
+                  <a className='navbar_link' href="https://www.vsu.am/" target='_blank'>About Us</a>
                 </Nav>
                 <Form inline>
                   {localStorage.getItem('token') ?
@@ -82,6 +73,7 @@ const Header = (props) => {
                           <Link variant="outline-primary" to='/login' id='logout'
                                 onClick={() => {
                                   localStorage.removeItem('token');
+                                  localStorage.removeItem('id');
                                   props.state.user = '';
                                 }}>
                             <CDropdown id='logout_dropdown'>

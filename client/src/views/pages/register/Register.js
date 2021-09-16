@@ -32,6 +32,8 @@ const Register = (props) => {
       history.push('/');
     }
   });
+
+  // props.state.responseRegister = {status: 'Can not Create User'}
   function createUser(e) {
     e.preventDefault();
     document.getElementById('alert_repeated_incorrectly').style.opacity = '0'

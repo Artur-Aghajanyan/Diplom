@@ -1,0 +1,202 @@
+.go-to-back button {
+  font-size: 20px;
+  padding: 0;
+  color: white;
+  background: #6600ff;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 18px;
+  transition: all 0.3s;
+}
+
+.go-to-back button:hover {
+  background: #4f00be;
+  margin-top: 16px;
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, -13px 5px 6px 1px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, -13px 5px 6px 1px rgba(0, 0, 0, 0);
+}
+
+.create-container {
+  font-family: 'Gafata', sans-serif !important;
+  background: #c7c6c6;
+}
+
+.create-question-inputs {
+  margin: auto;
+  width: 60%;
+}
+
+.create-question-inputs label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  width: 90%;
+}
+
+.create-question-inputs input, .create-question-inputs select {
+  width: 88%;
+  height: 35px;
+  border: 1px solid #b0afaf;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.create-question-inputs #question {
+  width: 88%;
+}
+
+#answer-div {
+  margin-top: 50px;
+  height: 360px;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+#answer-div .add-button {
+  float: right;
+}
+
+#answer-div input {
+  margin-bottom: 20px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  width: 80%;
+}
+
+.create-question-inputs select {
+  background: white;
+}
+
+.create-question-inputs input:focus, .create-question-inputs select:focus {
+  outline-color: darkgrey;
+}
+
+#answer-div > div button {
+  margin-left: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+#answer-div > label:first-child {
+  display: inline-block;
+}
+
+.create-question-inputs span {
+  color: darkred;
+  margin-right: 5px;
+  font-weight: 900;
+}
+
+#question-warning, #warning-answer {
+  display: none;
+  margin: 5px 0 5px 0;
+}
+
+#answer-div .add-button {
+  margin-top: 8px;
+  margin-right: 8%;
+}
+
+.create-question-button, .update-question-button {
+  margin-bottom: 25px;
+  background: #00b64a;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.5s;
+  width: 150px;
+  cursor: pointer;
+  color: white;
+  height: 45px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.create-question-button:hover, .update-question-button:hover {
+  background: #1b5e20;
+}
+
+.index-answer {
+  background: darkgrey;
+  padding: 11px 12px 11px 13px;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#answer-div > div {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 93%;
+  height: 37px;
+  margin-bottom: 25px;
+}
+
+#answer-div .choose-true-answer {
+  width: 5%;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+#quiz-warning {
+  text-align: center;
+  width: 90%;
+  font-size: 28px;
+  display: none;
+}
+
+.alert {
+  height: 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  align-items: center;
+  border-radius: 7px;
+  transition: all 1s;
+}
+
+.alert.error {
+  color: darkred;
+  border: 1px solid #ff2424;
+  background: #fbd2d7;
+}
+
+@media only screen and (max-width: 920px) {
+  .create-container {
+    grid-template-columns: 15% 85%;
+  }
+
+  #answer-div .choose-true-answer {
+    width: 25px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .create-question-inputs {
+    width: 80%;
+  }
+}
+
+.not-found {
+  height: 168px;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  color: yellow;
+  font-size: 30px;
+  font-weight: 700;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.not-found span {
+  color: black;
+}
