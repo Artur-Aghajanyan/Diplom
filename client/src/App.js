@@ -31,6 +31,8 @@ import CreateAnswer from "./components/answers/CreateAnswer";
 import UpdateAnswer from "./components/answers/UpdateAnswer";
 import Admin from "./components/Admin";
 import Modal from "./components/modal/Modal";
+import Variables from "./views/pages/Variables";
+import DataTypes from "./views/pages/DataTypes";
 
 class App extends Component {
   state = {
@@ -421,6 +423,14 @@ class App extends Component {
               {...props}
             />}/>
             <Route exact path="/hello-world" name='hello-world Page' render={props => <HelloWorld
+              state={this.state}
+              {...props}
+            />}/>
+            <Route exact path="/variables" name='variables Page' render={props => <Variables
+              state={this.state}
+              {...props}
+            />}/>
+            <Route exact path="/data-types" name='data types Page' render={props => <DataTypes
               state={this.state}
               {...props}
             />}/>

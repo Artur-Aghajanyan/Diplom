@@ -2,6 +2,9 @@ import React from 'react'
 import Header from "../users/Header";
 import code1 from '../../images/Screenshot from 2021-09-17 11-25-09.png'
 import code2 from '../../images/Screenshot from 2021-09-17 11-43-44.png'
+
+import './Pages.css'
+
 import {
   CCard,
   CCardBody

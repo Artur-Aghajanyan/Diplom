@@ -28,10 +28,10 @@ const Home = (props) => {
                 1.2 <Link to='/code-structure'>Code structure</Link>
               </CCardBody>
               <CCardBody className='ml-2'>
-                1.3 <Link to='/'>Variables</Link>
+                1.3 <Link to='/variables'>Variables</Link>
               </CCardBody>
               <CCardBody className='ml-2'>
-                1.4 <Link to='/'>Data types</Link>
+                1.4 <Link to='/data-types'>Data types</Link>
               </CCardBody>
             </CCard>
           </CCol>

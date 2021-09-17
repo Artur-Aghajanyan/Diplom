@@ -1,5 +1,12 @@
 import React from 'react'
 import Header from "../users/Header";
+import code1 from '../../images/Screenshot from 2021-09-17 14-25-13.png'
+import code2 from '../../images/Screenshot from 2021-09-17 14-26-05.png'
+import code3 from '../../images/Screenshot from 2021-09-17 14-26-07.png'
+import code4 from '../../images/Screenshot from 2021-09-17 14-38-25.png'
+
+import './Pages.css'
+
 import {
   CCard,
   CCardBody
@@ -17,23 +24,52 @@ const CodeStructure = (props) => {
             The first thing we’ll study is the building blocks of code.
           </p>
           <br/>
-          <h3><u>Statements</u></h3>
+          <h3>Statements</h3>
           <p>Statements are syntax constructs and commands that perform actions.
             We’ve already seen a statement, alert('Hello, world!'), which shows the message “Hello, world!”.
             We can have as many statements in our code as we want. Statements can be separated with a semicolon.
             For example, here we split “Hello World” into two alerts:</p>
+          <img src={code1} alt=""/>
           <br/>
-          <h6><u><b>The type attribute: {"\<script type=…\>"}</b></u></h6>
-          <p>The old HTML standard, HTML4, required a script to have
-            a type. Usually it was type="text/javascript". It’s not required
-            anymore. Also, the modern HTML standard totally changed the meaning
-            of this attribute. Now, it can be used for JavaScript modules. But that’s an advanced
-            topic, we’ll talk about modules in another part of the tutorial.</p>
           <br/>
-          <h6><u><b>The language attribute: {"\<script language=…\>"}</b></u></h6>
-          <p>This attribute was meant to show the language of the script.
-            This attribute no longer makes sense because JavaScript
-            is the default language. There is no need to use it.</p>
+          <br/>
+          <p>Usually, statements are written on separate lines to make the code more readable:</p>
+          <img src={code2} alt=""/>
+          <br/>
+          <br/>
+          <br/>
+
+
+          <h3>Semicolons</h3>
+          <p>A semicolon may be omitted in most cases when a line break exists.
+            <br/>
+            <br/>
+            This would also work:</p>
+          <img src={code2} alt=""/>
+          <br/>
+          <br/>
+          <br/>
+          <p>
+            Here, JavaScript interprets the line break as an “implicit” semicolon. This is called an automatic semicolon insertion.
+            <br/>
+            <br/>
+            In most cases, a newline implies a semicolon. But “in most cases” does not mean “always”!
+            <br/>
+            <br/>
+            There are cases when a newline does not mean a semicolon. For example:
+          </p>
+          <img src={code3} alt=""/>
+          <br/>
+          <br/>
+          <br/>
+          <p>
+            The code outputs 6 because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus "+",
+            then it is an “incomplete expression”, so a semicolon there would be incorrect. And in this case, that works as intended.
+          </p>
+          <img src={code4} alt=""/>
+          <br/>
+          <br/>
+          <br/>
         </CCardBody>
       </CCard>
     </>
