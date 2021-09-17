@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationTriangle, faPencilAlt, faPlus, faPowerOff} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import {useHistory} from "react-router-dom";
+import {Button} from "react-bootstrap";
 
 const Home = (props) => {
     const history = useHistory();
@@ -10,12 +11,17 @@ const Home = (props) => {
         <div className='question-container'>
             <header>
                 <span> Questions </span>
+              <Button type='button' variant='secondary' className='float-right' onClick={() => {
+                localStorage.removeItem('adminId');
+                localStorage.removeItem('adminToken');
+                history.push('/login')
+              }} > Log out</Button>
             </header>
             {!props.state.emptyQuiz &&
             (<div className='content'>
                 <div className='add-question'>
                     <button onClick={() => {
-                        history.push(`/create/question`)
+                        history.push(`/admin/create/question`)
                     }}>
                         <FontAwesomeIcon icon={faPlus}/> Add Question
                     </button>
@@ -40,7 +46,7 @@ const Home = (props) => {
                                             props.getSomeAnswers(question.id, question.name, question.typeAnswer)
                                             setTimeout(() => {
 
-                                                history.push(`/update/question?name=${question.name}&id=${question.id}`)
+                                                history.push(`/admin/update/question?name=${question.name}&id=${question.id}`)
                                             }, 200)
                                         }}>
                                             <FontAwesomeIcon icon={faPencilAlt}/>
@@ -54,7 +60,7 @@ const Home = (props) => {
                                 </tr>
                             )
                         }) : <tr>
-                            <th colSpan='3' className='there-is-not-question'>
+                            <th colSpan='3' className='there-is-not-question' id='there-is-not-question'>
                                 <div className='there-is-not-icon'>
                                     <FontAwesomeIcon icon={faExclamationTriangle}/>
                                 </div>

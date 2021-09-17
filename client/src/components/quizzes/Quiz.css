@@ -162,6 +162,8 @@
 }
 
 #add-quiz-input .close {
+  position: relative;
+  left: -20px;
   background: #f22f3b;
   margin-top: 14px;
   font-size: 15px;

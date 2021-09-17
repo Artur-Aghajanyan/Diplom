@@ -30,6 +30,7 @@ import CodeStructure from "./views/pages/CodeStructure";
 import CreateAnswer from "./components/answers/CreateAnswer";
 import UpdateAnswer from "./components/answers/UpdateAnswer";
 import Admin from "./components/Admin";
+import Modal from "./components/modal/Modal";
 
 class App extends Component {
   state = {
@@ -70,12 +71,10 @@ class App extends Component {
     getUser(data).then(res => res.json()).then(r => {
       this.setState({loginResult: r});
       if (r.token) {
-        if(r.user.role === 'admin'){
-          console.log('aaaaaaaaaaa')
+        if (r.user.role === 'admin') {
           localStorage.setItem('adminToken', JSON.stringify(r.token));
           localStorage.setItem('adminId', JSON.stringify(r.user.id));
-        }
-        else{
+        } else {
           localStorage.setItem('token', JSON.stringify(r.token));
           localStorage.setItem('id', JSON.stringify(r.user.id));
         }
@@ -94,33 +93,26 @@ class App extends Component {
         this.setState({statusUpdate: true})
       })
         .catch(() => {
-          this.setState({statusUpdate:false});
+          this.setState({statusUpdate: false});
         });
-    }else if (user.surname) {
+    } else if (user.surname) {
       resetUserSurname(user).then(res => res.json()).then(r => {
         this.setState({user: r});
         this.setState({statusUpdate: true})
       })
         .catch(() => {
-          this.setState({statusUpdate:false});
+          this.setState({statusUpdate: false});
         });
-    }
-    else if (user.password) {
+    } else if (user.password) {
       resetUserPassword(user).then(res => res.json()).then(r => {
         this.setState({user: r});
         this.setState({statusUpdate: true})
       })
         .catch(() => {
-          this.setState({statusUpdate:false});
+          this.setState({statusUpdate: false});
         });
     }
   }
-
-
-
-
-
-
 
 
   constructor(props) {
@@ -375,82 +367,83 @@ class App extends Component {
   }
 
 
-
-
-
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
+      <>
+        <BrowserRouter>
+          <Switch>
 
 
-          <Route exact path='/admin/create/question' render={() => <CreateAnswer
-            state={this.state}
-            AnswerType={this.AnswerType}
-            createQuestion={this.createQuestion}
-          />}/>
-          <Route exact path='/admin/update/question/' render={() => <UpdateAnswer
-            state={this.state}
-            updateAnswersIntoState={this.updateAnswersIntoState}
-            saveQuestionUpdate={this.saveQuestionUpdate}
-          />
-          }/>
-          <Route exact path={'/admin'} render={() => {
-            if (localStorage.getItem('adminToken') && localStorage.getItem('adminId')) {
-              return <Admin
-                state={this.state}
-                getSomeAnswers={this.getSomeAnswers}
-                getSomeQuestions={this.getSomeQuestions}
-                deleteQuiz={this.deleteQuiz}
-                createQuiz={this.createQuiz}
-                updateChanges={this.updateChanges}
-                openModalHandler={this.openModalHandler}/>
-            }else{
-              return <Redirect to='/login' />
-            }
-          }}/>
+            <Route exact path='/admin/create/question' render={() => <CreateAnswer
+              state={this.state}
+              AnswerType={this.AnswerType}
+              createQuestion={this.createQuestion}
+            />}/>
+            <Route exact path='/admin/update/question/' render={() => <UpdateAnswer
+              state={this.state}
+              updateAnswersIntoState={this.updateAnswersIntoState}
+              saveQuestionUpdate={this.saveQuestionUpdate}
+            />
+            }/>
+            <Route exact path={'/admin'} render={() => {
+              if (localStorage.getItem('adminToken') && localStorage.getItem('adminId')) {
+                return <Admin
+                  state={this.state}
+                  getSomeAnswers={this.getSomeAnswers}
+                  getSomeQuestions={this.getSomeQuestions}
+                  deleteQuiz={this.deleteQuiz}
+                  createQuiz={this.createQuiz}
+                  updateChanges={this.updateChanges}
+                  openModalHandler={this.openModalHandler}/>
+              } else {
+                return <Redirect to='/login'/>
+              }
+            }}/>
 
 
+            <Route exact path="/login" name="Login Page" render={props => <Login
+              {...props}
+              loginUser={this.loginUser}
+              state={this.state}
+            />}/>
+            <Route exact path="/register" name='Register Page' render={props => <Register
+              state={this.state}
+              createUser={this.createUser}
+              {...props}
+            />}/>
+            <Route exact path="/" name='Home Page' render={props => <Home
+              state={this.state}
+              {...props}
+            />}/>
+            <Route exact path="/setting" name='Setting Page' render={props => <Setting
+              state={this.state}
+              changeUserData={this.changeUserData}
+              {...props}
+            />}/>
+            <Route exact path="/hello-world" name='hello-world Page' render={props => <HelloWorld
+              state={this.state}
+              {...props}
+            />}/>
+            <Route exact path="/code-structure" name='code-structure Page' render={props => <CodeStructure
+              state={this.state}
+              {...props}
+            />}/>
+
+            <Route render={() => <Page404 state={this.state}/>}/>
 
 
-
-
-
-
-
-
-
-          <Route exact path="/login" name="Login Page" render={props => <Login
-            {...props}
-            loginUser={this.loginUser}
-            state={this.state}
-          />}/>
-          <Route exact path="/register" name='Register Page' render={props => <Register
-            state={this.state}
-            createUser={this.createUser}
-            {...props}
-          />}/>
-          <Route exact path="/" name='Home Page' render={props => <Home
-            state={this.state}
-            {...props}
-          />}/>
-          <Route exact path="/setting" name='Setting Page' render={props => <Setting
-            state={this.state}
-            changeUserData={this.changeUserData}
-            {...props}
-          />}/>
-          <Route exact path="/hello-world" name='hello-world Page' render={props => <HelloWorld
-            state={this.state}
-            {...props}
-          />}/>
-          <Route exact path="/code-structure" name='code-structure Page' render={props => <CodeStructure
-            state={this.state}
-            {...props}
-          />}/>
-
-          <Route render={() => <Page404 state={this.state}/>}/>
-        </Switch>
-      </BrowserRouter>
+          </Switch>
+        </BrowserRouter>
+        <Modal
+          className="modal"
+          state={this.state}
+          close={this.closeModalHandler}
+          closeModalHandler={this.closeModalHandler}
+          deleteQuiz={this.deleteQuiz}
+          deleteQuestion={this.deleteQuestion}
+        >
+        </Modal>
+      </>
     );
   }
 }

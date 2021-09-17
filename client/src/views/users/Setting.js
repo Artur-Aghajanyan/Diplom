@@ -11,10 +11,15 @@ import {
 } from '@coreui/react'
 import Header from "./Header";
 import CIcon from "@coreui/icons-react";
+import {useHistory} from "react-router-dom";
 
 
 const Setting = (props) => {
-  // const history = useHistory();
+  const history = useHistory();
+  if (!localStorage.getItem('token') && !localStorage.getItem('id')) {
+    console.log('aaaaaaaaaaa')
+    history.push('/login');
+  }
   const [name, setName] = useState(false)
   const [surname, setSurname] = useState(false)
   const [password, setPassword] = useState(false)

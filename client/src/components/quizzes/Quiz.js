@@ -124,7 +124,7 @@ class Quiz extends React.Component {
                                                    this.saveChanges(index, quiz.id);
                                                }}
                                                className='quiz-update-input'/>
-                                        <Link className='quiz-links' to={`/`} onClick={() => {
+                                        <Link className='quiz-links' to={`/admin`} onClick={() => {
                                             this.selectQuiz(index, quiz.id)
                                         }}> {quiz.name} </Link>
                                         <div className="update-delete">

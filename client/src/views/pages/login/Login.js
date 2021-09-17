@@ -25,8 +25,11 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token') && localStorage.getItem('id')) {
       history.push('/');
+    }
+    else if(localStorage.getItem('adminToken') && localStorage.getItem('adminId')) {
+      history.push('/admin');
     }
   });
 

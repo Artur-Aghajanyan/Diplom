@@ -11,7 +11,7 @@ const CodeStructure = (props) => {
     <>
       <Header state={props.state}/>
       <CCard className='m-5'>
-        <CCardBody>
+        <CCardBody className='pl-5 ml-5 pr-5 mr-5'>
           <h1><u>Code structure</u></h1>
           <p>
             The first thing we’ll study is the building blocks of code.

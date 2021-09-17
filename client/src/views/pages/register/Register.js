@@ -28,7 +28,7 @@ const Register = (props) => {
   const [password, setPassword] = useState("");
   const [repeat_password, setRepeatPassword] = useState("");
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token') && localStorage.getItem('id')) {
       history.push('/');
     }
   });

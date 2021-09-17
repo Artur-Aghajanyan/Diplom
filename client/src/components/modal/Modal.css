@@ -6,7 +6,7 @@
     align-items: center;
     left: 30%;
     top: 10%;
-    height: 200px;
+    height: 250px;
     transition: all .8s;
     width: 40%;
     display: grid;
@@ -40,7 +40,6 @@
 }
 
 .modal-footer {
-    height: 40px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }

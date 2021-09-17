@@ -88,7 +88,7 @@ const UpdateAnswer = (props) => {
             </div>
             {res ?
                 <div className="create-question-inputs">
-                    <div className="alert" style={{
+                    <div className="alert alert-success" style={{
                         height: props.state.updateQuestionRes ? '70px' : '0',
                         opacity: props.state.updateQuestionRes ? '1' : '0'
                     }}>
@@ -137,7 +137,7 @@ const UpdateAnswer = (props) => {
                             <label htmlFor="answer"><span>*</span>
                                 Answers (You must put 4 answers and do not forget to choose a true answer or answers)
                             </label>
-                            <span id='warning-answer'>Can not any empty input or inputs</span>
+                            <span id='warning-answer'>Can not be any empty input or inputs</span>
                             {props.state.answers.map((answer, index) => {
                                 return (<div key={index}>
                                         <div className='index-answer'>{index + 1}</div>
