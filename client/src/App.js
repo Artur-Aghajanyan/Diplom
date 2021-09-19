@@ -33,6 +33,7 @@ import Admin from "./components/Admin";
 import Modal from "./components/modal/Modal";
 import Variables from "./views/pages/Variables";
 import DataTypes from "./views/pages/DataTypes";
+import Numbers from './views/pages/Numbers';
 
 class App extends Component {
   state = {
@@ -431,6 +432,10 @@ class App extends Component {
               {...props}
             />}/>
             <Route exact path="/data-types" name='data types Page' render={props => <DataTypes
+              state={this.state}
+              {...props}
+            />}/>
+            <Route exact path="/numbers" name='numbers Page' render={props => <Numbers
               state={this.state}
               {...props}
             />}/>

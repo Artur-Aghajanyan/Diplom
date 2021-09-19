@@ -60,9 +60,9 @@ const DataTypes = (props) => {
           <br/>
           <h3>BigInt</h3>
 
-          <p>In JavaScript, the “number” type cannot represent integer values larger than (253-1) (that’s
+          <p>In JavaScript, the “number” type cannot represent integer values larger than (2<sup>53</sup>-1) (that’s
             9007199254740991),
-            or less than -(253-1) for negatives. It’s a technical limitation caused by their internal representation.
+            or less than -(2<sup>53</sup>-1) for negatives. It’s a technical limitation caused by their internal representation.
             <br/><br/>
             For most purposes that’s quite enough, but sometimes we need really big numbers, e.g. for cryptography or
             microsecond-precision timestamps.

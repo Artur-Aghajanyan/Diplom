@@ -41,16 +41,16 @@ const Home = (props) => {
                   <h5>2. Data types</h5>
                 </CCardHeader>
                 <CCardBody className='ml-2'>
-                  2.1 <Link to='/'>Numbers</Link>
+                  2.1 <Link to='/numbers'>Numbers</Link>
                 </CCardBody>
                 <CCardBody className='ml-2'>
-                  2.2 <Link to='/'>Methods of primitives</Link>
+                  2.2 <Link to='/primitives-methods'>Methods of primitives</Link>
                 </CCardBody>
                 <CCardBody className='ml-2'>
-                  2.3 <Link to='/'>Arrays</Link>
+                  2.3 <Link to='/arrays'>Arrays</Link>
                 </CCardBody>
                 <CCardBody className='ml-2'>
-                  2.4 <Link to='/'>Array methods</Link>
+                  2.4 <Link to='/array-methods'>Array methods</Link>
                 </CCardBody>
             </CCard>
           </CCol>
@@ -61,16 +61,16 @@ const Home = (props) => {
                 <h5>3. Prototypes, inheritance</h5>
               </CCardHeader>
               <CCardBody className='ml-2'>
-                3.1 <Link to='/'>Prototypal inheritance</Link>
+                3.1 <Link to='/prototype-inheritance'>Prototypal inheritance</Link>
               </CCardBody>
               <CCardBody className='ml-2'>
-                3.2 <Link to='/'>F.prototype</Link>
+                3.2 <Link to='/function-prototype'>F.prototype</Link>
               </CCardBody>
               <CCardBody className='ml-2'>
-                3.3 <Link to='/'>Native prototypes</Link>
+                3.3 <Link to='/native-prototypes'>Native prototypes</Link>
               </CCardBody>
               <CCardBody className='ml-2'>
-                3.4 <Link to='/'>Prototype methods, objects without __proto__</Link>
+                3.4 <Link to='/prototype-methods'>Prototype methods, objects without __proto__</Link>
               </CCardBody>
             </CCard>
           </CCol>
